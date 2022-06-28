@@ -6,6 +6,28 @@ var answersEl = document.getElementById("answerButtons");
 
 var secondsLeft = 60;
 var currentQuestion = ''
+var questions = [
+  {
+    question: "What will the code return? Boolean(20 < 60)",
+    choices: ["1. False", "2. Undefined", "3. True", "4. NaN"],
+    answer: "3. True"
+  },
+  {
+    question: "Which of the following statements will show a message as well as ask for user input in a popup?",
+    choices: ["1. message()", "2. prompt()", "3. alert()", "4. confirm()"],
+    answer: "2. prompt()"
+  }, 
+  {
+    question: "What is the proper syntax of a for loop?",
+    choices: ["1. for(red + blue = green)", "2. for(i++; i < 0; i = 0)", "3. for(loop)", "4. for(i = 0; i > 0; i++)"],
+    answer: "4. for(i = 0; i > 0; i++)"
+  },
+  {
+    question: "Which HTML tags do we store our JavaScript file within?",
+    choices: ["1. <script></script>", "2. <header></header>", "3. <footer></footer>", "4. <img></img>"],
+    answer: "1. <script></script>"
+  }
+];
 
 
 //start button
@@ -15,6 +37,7 @@ startButton.addEventListener('click', startGame)
 function startGame() {
   console.log("HERE WE GOOOOOO")
   startButton.setAttribute("style", "display: none;");
+  questionConEl.setAttribute("style", "display: block")
   currentQuestion = 0
   countdownTimer.textContent = secondsLeft;
 
@@ -25,13 +48,12 @@ function startGame() {
 
     if(secondsLeft === 0) {
       clearInterval(timerSet);
-      
+      countdownTimer.textContent = "Times up!" 
     }
   }, 1000); 
-  setNextQuestion()
-}
 
   setNextQuestion()
+}
 
 
 function setNextQuestion() {
@@ -45,39 +67,6 @@ function showQuestion(questions) {
 function selectAnswer() {
 
 }
-
-
-
-var questions = [
-  {
-    question: "What will the code return? Boolean(20 < 60)",
-    answers: [
-      {text: "False", correct: false},
-      {text: "Undefined", correct: false},
-      {text: "True", correct: true},
-      {text: "NaN", correct: false}
-    ] 
-  }
-
-  
-  // {
-  //   question: "Which of the following statements will show a message as well as ask for user input in a popup?",
-  //   answers: ["message()", "prompt()", "alert()", "confirm()"],
-  //   answer: 2
-  // },
-    
-  // {
-  //   question: "What is the proper syntax of a for loop?",
-  //   answers: ["for(red + blue = green)", "for(i++; i < 0; i = 0)", "for(loop)", "for(i = 0; i > 0; i++)"],
-  //   answer: 4
-  // },
-  // {
-  //   question: "Which HTML tags do we store our JavaScript file within?",
-  //   answers: ["<script></script>", "<header></header>", "<footer></footer>", "<img></img>"],
-  //   answer: 1
-  // }
-]
-
 
 
 setTimer();
