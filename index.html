@@ -10,28 +10,27 @@
 </head>
 
 <body>
- <header>
-  <a href="./scores.html">High Scores</a>
-  <div id="countdownTimer"> </div>
- </header> 
- 
- <main>
+  <header>
+    <a href="./scores.html">High Scores</a>
+    <div id="scoreStore"></div>
+    <div id="countdownTimer"> </div>
+  </header>
+
+  <main>
     <div class="container">
+      <div class="startContainer" id="startContainer">
+        <button class="startButton" id="startHide">Start Quiz</button>
+      </div>
       <div class="questionContainer" id="questionHide">
-        <div class="question" id="getQuestion">This is going to be a Question</div>
-        <div class="buttonContainer" id="answerButtons">
-          <button class="button" id="buttonOne">answer 1</button>
-          <button class="button" id="buttonTwo">answer 2</button>
-          <button class="button" id="buttonThree">answer 3</button>
-          <button class="button" id="buttonfour">answer 4</button>
+        <div class="question" id="getQuestion">
+          <h2 id="quesTitle" class="h2"></h2>
+          <div class="buttonContainer" id="answerButtons"></div>
         </div>
       </div>
-      <div class="startContainer" id="startContainer">
-        <button class="startButton" id="startHide">Start</button>
-      </div> 
     </div>
-  </main>  
-  
-<script src="./assets/js/script.js"></script>
+  </main>
+
+  <script src="./assets/js/script.js"></script>
 </body>
+
 </html>

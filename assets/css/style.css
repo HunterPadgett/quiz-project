@@ -3,6 +3,7 @@
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
+
 header {
   display: flex;
   flex-direction: row;
@@ -12,27 +13,29 @@ header {
   margin: 1rem;
 }
 
-main {
+.headerTwo {
   display: flex;
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-  justify-content: center;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+  font-size: 2rem;
+  margin: 1rem;
 }
 
 
+
+
 .container {
-  font-size: 3rem;
-  max-width: 80%;
+  margin-top: 15rem;
+  display: flex;
 }
 
 .buttonContainer {
   display: flex;
   flex-direction: column;
   font-size: 2rem;
-  max-width: 50%;
+  max-width: 90%;
+  justify-content: ;
 }
 
 .button {
@@ -49,9 +52,9 @@ main {
 }
 
 .startContainer {
-display: flex;
-justify-content: center;
-font-size: 4rem;
+  display: flex;
+  justify-content: center;
+  font-size: 4rem;
 }
 
 .startButton {
@@ -66,6 +69,17 @@ font-size: 4rem;
 }
 
 .questionContainer {
-  display: none;
+  display: flex;
+    background-color: white;
+    border-color: black;
+    border-style: solid;
+    width: 50%;
+    margin: 0 auto;
+    height: 400px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* align-self: center; */
+    padding: 5px;
+    border-radius: 6px;
 }
-
