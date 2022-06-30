@@ -4,11 +4,13 @@ var startButton = document.getElementById("startHide");
 var questionConEl = document.getElementById("questionHide");
 var questionEl = document.getElementById("getQuestion");
 var answersEl = document.getElementById("answerButtons");
-var scoreStore = document.getElementById("scoreStore")
-var quesTitle = document.getElementById("quesTitle")
+var scoreStore = document.getElementById("scoreStore");
+var quesTitle = document.getElementById("quesTitle");
+var formSubmit = document.getElementById("form");
+var scoreCard = document.getElementById("card");
 
 // variables
-var secondsLeft = 60;
+var secondsLeft = 30;
 var index = 0;
 var correctAnswer = 0;
 
@@ -56,14 +58,15 @@ function startGame() {
     if (secondsLeft <= 0) {
       clearInterval(timerSet);
       countdownTimer.textContent = "Times up!"
+      gameOver();
     }
   }, 1000);
 
 
-  retrieveQuestions();
+  nextQuestion();
 }
 
-function retrieveQuestions() {
+function nextQuestion() {
   var questionPopulate = questions[index];
   quesTitle.textContent = questionPopulate.question;
   answersEl.innerHTML = '';
@@ -88,13 +91,20 @@ function selectAnswer() {
     scoreStore.textContent = "Score: " + correctAnswer;
     console.log(correctAnswer)
     index++;
-    alert("Good Job")
-    retrieveQuestions();
+    // alert("Good Job")
+    nextQuestion();
   } else {
     secondsLeft -= 5;
     countdownTimer.textContent = secondsLeft;
-    alert("incorrect! You lose 5 seconds!");
-    // index++
-    retrieveQuestions();
+    // alert("incorrect! You lose 5 seconds!");
+    index++
+    nextQuestion();
   }
+}
+
+function gameOver() {
+  questionConEl.setAttribute("style", "display: none;");
+  startButton.setAttribute("style", "display: none;");
+  formSubmit.setAttribute("style", "display: flex;");
+  scoreCard.setAttribute("style", "display: flex;");
 }

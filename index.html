@@ -5,13 +5,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>coding quiz (that's probably dysfunctional!)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/reset.css">
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
   <header>
-    <a href="./scores.html">High Scores</a>
+    <!-- <a href="./scores.html">High Scores</a> -->
     <div id="scoreStore"></div>
     <div id="countdownTimer"> </div>
   </header>
@@ -28,6 +32,21 @@
         </div>
       </div>
     </div>
+    <div> 
+      <form class="form" id="form">
+        <p >Enter your initials: <input id="initialInput">
+        <button id="signUp">Submit</button>
+        </p>
+      </form>
+    </div>
+    <div class="card" id="card">
+      <h2>High Scores:</h2>
+      <div class="initContainer">
+        <p class="init">Initials: <span id="userInitials"></span></p>
+        <p class="score">Score: <span id="userScores"></span></p>
+      </div>  
+    </div>
+  </div>
   </main>
 
   <script src="./assets/js/script.js"></script>
