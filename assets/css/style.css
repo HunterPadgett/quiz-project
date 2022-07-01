@@ -4,7 +4,7 @@
   background-color: rgb(252, 238, 222);
 }
 
-
+/* header styling */
 header {
   display: flex;
   flex-direction: row;
@@ -23,6 +23,8 @@ header {
   margin: 1rem;
 }
 
+
+/* question and answer container styling */
 .container {
   margin-top: 4rem;
   display: flex;
@@ -55,6 +57,31 @@ header {
   background-color: rgb(51, 31, 233);
 }
 
+.questionContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  margin: 0 0 5rem 0
+}
+
+h2 {
+  font-size: 3rem;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.question {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  max-width: 80%;
+}
+
+
+/* start button styling */
 .startContainer {
   display: flex;
   margin-top: 5rem;
@@ -79,29 +106,7 @@ header {
   background-color: rgb(51, 31, 233);
 }
 
-.questionContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  justify-items: center;
-  margin: 0 0 5rem 0
-}
-
-h2 {
-  font-size: 3rem;
-  margin: 2rem 0;
-  text-align: center;
-}
-
-.question {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  flex-direction: column;
-  max-width: 80%;
-}
-
+/* entering initials  */
 .form {
   display: flex;
   justify-content: center;
@@ -109,6 +114,7 @@ h2 {
   display: none;
 }
 
+/* high score card */
 .card {
   display: flex;
   background-color: rgb(98, 83, 236);
@@ -155,4 +161,13 @@ h2 {
   display: flex;
   justify-content: center;
   align-content: center;
+}
+
+#userInitials {
+  background-color: rgb(98, 83, 236);
+  color: ;
+}
+
+#userScores {
+  background-color: rgb(98, 83, 236);
 }

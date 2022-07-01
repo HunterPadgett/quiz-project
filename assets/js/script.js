@@ -8,6 +8,11 @@ var scoreStore = document.getElementById("scoreStore");
 var quesTitle = document.getElementById("quesTitle");
 var formSubmit = document.getElementById("form");
 var scoreCard = document.getElementById("card");
+var signupButton = document.getElementById("signUp");
+var initialsSubmit = document.getElementById("initialInput");
+var userSpan = document.getElementById("userInitials");
+var scoreSpan = document.getElementById("userScores");
+
 
 // variables
 var secondsLeft = 30;
@@ -38,7 +43,6 @@ var questions = [
   }
 ];
 
-
 // start button click
 // triggers timer countdown, hides start button, displays question & answer container
 startButton.addEventListener('click', startGame)
@@ -66,6 +70,7 @@ function startGame() {
   nextQuestion();
 }
 
+// populating question and answers via appending to rotate between set of questions
 function nextQuestion() {
   var questionPopulate = questions[index];
   quesTitle.textContent = questionPopulate.question;
@@ -73,9 +78,9 @@ function nextQuestion() {
   questionPopulate.choices.forEach(function (choice) {
     var buttonPopulate = document.createElement('button');
     buttonPopulate.setAttribute('value', choice);
-    buttonPopulate.textContent = choice; //got check act to set class and value
-    answersEl.append(buttonPopulate); // adds the elements to the parent ChoiceEl
-    buttonPopulate.classList.add("button"); // applies  class='answer' styling
+    buttonPopulate.textContent = choice; 
+    answersEl.append(buttonPopulate); 
+    buttonPopulate.classList.add("button"); 
     console.log(buttonPopulate);
     buttonPopulate.addEventListener("click", selectAnswer);
   })
@@ -102,9 +107,29 @@ function selectAnswer() {
   }
 }
 
+// clears questions and brings in high score screen
 function gameOver() {
   questionConEl.setAttribute("style", "display: none;");
   startButton.setAttribute("style", "display: none;");
   formSubmit.setAttribute("style", "display: flex;");
-  scoreCard.setAttribute("style", "display: flex;");
+  // scoreCard.setAttribute("style", "display: flex;");
 }
+
+// attempt at local storage
+function highSCoresList() {
+  var init = localStorage.getItem(initialsSubmit);
+  var score = localStorage.getItem(correctAnswer);
+
+  userSpan.append(init)
+  scoreSpan.append(score)
+}
+
+// submit initials click event
+signupButton.addEventListener("click", function(event) {
+  event.preventDefault();
+  var init = initialsSubmit.value
+  localStorage.setItem(init, correctAnswer)
+  scoreCard.setAttribute("style", "display: flex;");
+});
+
+highSCoresList();
